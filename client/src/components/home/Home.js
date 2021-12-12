@@ -26,7 +26,7 @@ const Home = () => {
     <div>
       <h1>Home {JSON.stringify(user)} </h1>
       <button onClick={setAsJohn}>set as John</button>
-      <button onClick={setAsTom}>set as John</button>
+      <button onClick={setAsTom}>set as Tom</button>
       <Link to='/chat'>
         <button>Go to chat</button>
       </Link>
