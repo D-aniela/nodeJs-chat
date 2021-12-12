@@ -1,9 +1,20 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../UserContext'
+import RoomList from './RoomList'
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext)
+  const rooms = [
+    {
+      name: 'room1',
+      _id: '123',
+    },
+    {
+      name: 'room2',
+      _id: '456',
+    },
+  ]
   const setAsJohn = () => {
     const john = {
       name: 'John',
@@ -24,9 +35,42 @@ const Home = () => {
   }
   return (
     <div>
-      <h1>Home {JSON.stringify(user)} </h1>
-      <button onClick={setAsJohn}>set as John</button>
-      <button onClick={setAsTom}>set as Tom</button>
+      <div className='row'>
+        <div className='col s12 m6'>
+          <div className='card blue-grey darken-1'>
+            <div className='card-content darken white-text'>
+              <span className='card-title'>
+                Welcome {user ? user.name : ''}
+              </span>
+              <form className='col s12'>
+                <div className='row'>
+                  <div className='input-field col s12'>
+                    <input
+                      placeholder='Enter a room name'
+                      id='room'
+                      type='text'
+                      className='validate'
+                    />
+                    <label htmlFor='room'>Room</label>
+                  </div>
+                </div>
+              </form>
+              <button className='btn'>Create Room</button>
+            </div>
+            <div className='card-action'>
+              <a href='/' onClick={setAsJohn}>
+                Set as John
+              </a>
+              <a href='/' onClick={setAsTom}>
+                Set as Tom
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='col s6 m5 offset-1'>
+          <RoomList rooms={rooms} />
+        </div>
+      </div>
       <Link to='/chat'>
         <button>Go to chat</button>
       </Link>
