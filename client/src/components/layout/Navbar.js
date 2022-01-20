@@ -8,8 +8,8 @@ const Navbar = () => {
           <a href='/' className='brand-logo'>
             Chat
           </a>
-          <a href='/' data-target='mobile-demo' class='sidenav-trigger'>
-            <i class='material-icons'>menu</i>
+          <a href='/' data-target='mobile-demo' className='sidenav-trigger'>
+            <i className='material-icons'>menu</i>
           </a>
           <ul id='nav-mobile' className='right hide-on-med-and-down'>
             <li>
@@ -24,7 +24,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <ul class='sidenav' id='mobile-demo'>
+      <ul className='sidenav' id='mobile-demo'>
         <li>
           <a href='sass.html'>Login</a>
         </li>
